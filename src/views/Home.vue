@@ -1,18 +1,19 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div>
+        <h1>{{name}} is the name from GraphQL.</h1>
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+/*
+ * View that gets a 'name' variable from faker-graphql and displays it.
+ */
+import gql from 'graphql-tag';
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld,
+  name: 'Home',
+  apollo: {
+    name: gql`{ name }`,
   },
 };
 </script>
