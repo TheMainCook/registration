@@ -1,0 +1,8 @@
+type Person {
+  name: String @fake(type: firstName)
+  gender: String @examples(values: ["male", "female"])
+}
+
+schema {
+  query: Person
+}
